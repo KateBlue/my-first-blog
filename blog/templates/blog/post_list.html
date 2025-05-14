@@ -8,20 +8,17 @@
 </head>
 
 <body>
-    <div><a href="/">Kate's blog</a></div>
     <div>
-        <p>Published: 14.05.2025, 19:00</p>
-        <p><a href="">My first post</a></p>
-        <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta
-            gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
-            massa justo sit amet risus.</p>
+        <h1>Kate's blog</h1>
     </div>
+    {% for post in posts %}
     <div>
-        <p>Published: 14.05.2025, 19:05</p>
-        <p><a href="">My second post</a></p>
-        <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta
-            gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text | linebreaksbr }}</p>
     </div>
+    {% endfor %}
+
 </body>
 
 </html>
